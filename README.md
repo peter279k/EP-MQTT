@@ -50,13 +50,13 @@ Reload systemctl and turn it on:
 ```shell
 sudo systemctl daemon-reload
 sudo systemctl enable mqtt_subscriber.service
-sudo service mqtt_subscriber start
+sudo systemctl start mqtt_subscriber.service
 ```
 
 To see if it's running:
 
 ```shell
-service mqtt_subscriber/status
+sudo systemctl status mqtt_subscriber.service
 ```
 
 ## Set up authentication for your Mosquitto broker
@@ -118,5 +118,5 @@ Also be sure to look at the [mosquitto.conf](mosquitto.conf) file in this repo f
 Restart mosquitto service:
 
 ```shell
-sudo service mosquitto restart
+sudo systemctl restart mosquitto
 ```
